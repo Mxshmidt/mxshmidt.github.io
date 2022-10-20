@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Описание знака {{sign|upper}}{% endblock %}
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<h2>{{sign_info|capfirst}}</h2>
+{% endblock %}

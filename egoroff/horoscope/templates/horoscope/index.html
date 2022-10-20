@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Список знаков зодиака
+{% endblock %}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static '/horoscope/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<ol>
+    {% for zodiac in zodiacs %}
+    <li><a href="{% url 'horoscope_name' sign_zodiac=zodiac%}">{{zodiac|title}}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
+
